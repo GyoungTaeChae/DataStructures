@@ -16,16 +16,7 @@ int Sum(int* arr, int n)
 
 int RecurSum(int* arr, int n)
 {
-	
-	if (n <= 0)
-{
-    return 0;
-}
-else
-{	
-    return RecurSum(arr,n-1)+arr[n-1];
-}
-
+	reuturn 0;
 }
 
 int main()
