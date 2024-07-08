@@ -1,0 +1,3 @@
+std::swap으로 swap 가능 
+ref넘겨줄땐 (a,b)
+pointer넘겨줄땐 (&a,&b)

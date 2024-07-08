@@ -18,16 +18,21 @@ void MySwapPtr(int* i, int* j)
 	*j = tmp;
 }
 
-// void MySwapRef(int& i, int& j)
-// {
-// 	// TODO:
-// }
-// */
+void MySwapRef(int& i, int& j)
+{
+	int tmp = i;
+	i = j;
+	j = tmp;
+}
 
-// bool CheckSorted(int a, int b)
-// {
-// 	return false;
-// }
+
+bool CheckSorted(int a, int b)
+{
+	if (a<=b){
+		return true;
+	}
+	return false;
+}
 
 int main()
 {
@@ -38,8 +43,8 @@ int main()
 
 		cout << a << " " << b << endl;
 
-		MySwapPtr(&a,&b);
-		
+		// MySwapPtr(&a,&b);
+		MySwapRef(a,b);
 
 		cout << a << " " << b << endl;
 	}
@@ -50,8 +55,12 @@ int main()
 		int arr[] = { 9, 3 };
 
 		cout << arr[0] << " " << arr[1] << endl;
-
-		// TODO:
+		cout << boolalpha;
+		for(int i = 0; i<5; i++){
+			for(int j = 0; j<5; j++){
+				std::cout << i << " " << j << " " << CheckSorted(i,j) << std::endl;
+			}
+		}
 
 		cout << arr[0] << " " << arr[1] << endl;
 	}
