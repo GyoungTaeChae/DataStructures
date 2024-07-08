@@ -13,10 +13,12 @@ struct Element
 bool CheckSorted(int* arr, int size)
 {
 	// TODO: 정렬 확인 함수 구현
-
-	return true;
+	if (arr[0]<= arr[1] && arr[0]<= arr[2] && arr[1]<=arr[2]){
+		return true;
+	}
+	return false;
 }
-
+ 
 void Print(int* arr, int size)
 {
 	for (int i = 0; i < size; i++)
@@ -52,7 +54,12 @@ int main()
 
 					cout << " -> " << flush;
 
-					//TODO: 정렬 해보기
+					
+					for (int i = 0; i<size; i++){
+						for (int j = i; j<size; j++){
+							if (arr[i] > arr[j]) {std::swap(arr[i] , arr[j]);}
+						}
+					}
 
 					for (int e = 0; e < size; e++) {
 						cout << arr[e] << " " << flush;
