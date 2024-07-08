@@ -23,7 +23,6 @@ int RecurSum(int* arr, int n)
 }
 else
 {	
-	
     return RecurSum(arr,n-1)+arr[n-1];
 }
 
