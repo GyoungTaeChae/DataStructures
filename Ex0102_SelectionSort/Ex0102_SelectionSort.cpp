@@ -12,29 +12,29 @@ struct Element
 
 bool CheckSorted(int* arr, int size)
 {
-	// TODO: 정렬 확인 함수 구현
-	if (arr[0]<= arr[1] && arr[0]<= arr[2] && arr[1]<=arr[2]){
-		return true;
+	
+	for (int i = 0; i<size-1; i++){
+		if(arr[i]>arr[i+1]){return false;}
 	}
-	return false;
+	return true;
 }
  
 void Print(int* arr, int size)
 {
 	for (int i = 0; i < size; i++)
-		cout << arr[i] << " ";
-	cout << endl;
+		std::cout << arr[i] << " ";
+	std::cout << endl;
 }
 
 void Print(Element* arr, int size)
 {
 	for (int i = 0; i < size; i++)
-		cout << arr[i].key << " ";
-	cout << endl;
+		std::cout << arr[i].key << " ";
+	std::cout << endl;
 
 	for (int i = 0; i < size; i++)
-		cout << arr[i].value << " ";
-	cout << endl;
+		std::cout << arr[i].value << " ";
+	std::cout << endl;
 }
 
 int main()
@@ -49,10 +49,10 @@ int main()
 					int size = sizeof(arr) / sizeof(arr[0]);
 
 					for (int e = 0; e < size; e++) {
-						cout << arr[e] << " " << flush;
+						std::cout << arr[e] << " " << flush;
 					}
 
-					cout << " -> " << flush;
+					std::cout << " -> " << flush;
 
 					
 					for (int i = 0; i<size; i++){
@@ -62,12 +62,12 @@ int main()
 					}
 
 					for (int e = 0; e < size; e++) {
-						cout << arr[e] << " " << flush;
+						std::cout << arr[e] << " " << flush;
 					}
 
-					cout << boolalpha;
-					cout << CheckSorted(arr, size); // 정렬 되었나 확인
-					cout << endl;
+					std::cout << boolalpha;
+					std::cout << CheckSorted(arr, size); // 정렬 되었나 확인
+					std::cout << endl;
 				}
 	}
 
@@ -93,7 +93,7 @@ int main()
 
 		// TODO:
 
-		// cout << "Minimum number is " << min_number << endl;
+		// std::cout << "Minimum number is " << min_number << endl;
 	}
 
 	// 가장 작은 수의 인덱스 찾기
@@ -105,8 +105,8 @@ int main()
 
 		// TODO:
 
-		//cout << "The index of min is " << min_index << endl;
-		//cout << "Minimum number is " << arr[min_index] << endl;
+		//std::std::cout << "The index of min is " << min_index << endl;
+		//std::cout << "Minimum number is " << arr[min_index] << endl;
 	}
 
 	// Selection Sort
@@ -123,9 +123,9 @@ int main()
 
 			Print(arr, size);
 
-			cout << boolalpha;
-			cout << CheckSorted(arr, size);
-			cout << endl;
+			std::cout << boolalpha;
+			std::cout << CheckSorted(arr, size);
+			std::cout << endl;
 		}
 	}
 
@@ -143,7 +143,7 @@ int main()
 
 			//TODO: count ++;
 
-			//cout << size << ", " << count << endl;
+			//std::cout << size << ", " << count << endl;
 			ofile << size << ", " << count << endl;
 			// Print(arr, size);
 
