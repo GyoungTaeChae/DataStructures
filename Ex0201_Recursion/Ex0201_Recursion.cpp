@@ -32,9 +32,9 @@ void RecurFunc(int count)
 
 int main()
 {
-	// Func1(); // 이름이 다른 함수 호출
+	Func1(); // 이름이 다른 함수 호출
 
-	RecurFunc(5); // 이름이 같은 함수 호출
+	// RecurFunc(5); // 이름이 같은 함수 호출
 
 	return 0;
 }
