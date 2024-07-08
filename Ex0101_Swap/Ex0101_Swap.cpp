@@ -3,18 +3,20 @@
 using namespace std;
 
 
-int MySwapValue(int i, int j)
-{
-	int tmp = j;
-	j = i ;
-	i = tmp;
-	return i,j ;
-}
-
-// void MySwapPtr(int* i, int* j)
+// int MySwapValue(int i, int j)
 // {
-// 	// TODO:
+// 	int tmp = j;
+// 	j = i ;
+// 	i = tmp;
+// 	return i,j ;
 // }
+
+void MySwapPtr(int* i, int* j)
+{
+	int tmp = *i;
+	*i = *j;
+	*j = tmp;
+}
 
 // void MySwapRef(int& i, int& j)
 // {
@@ -36,7 +38,7 @@ int main()
 
 		cout << a << " " << b << endl;
 
-		MySwapValue(a,b);
+		MySwapPtr(&a,&b);
 		
 
 		cout << a << " " << b << endl;
