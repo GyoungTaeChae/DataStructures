@@ -5,6 +5,7 @@ using namespace std;
 
 int MySwapValue(int i, int j)
 {
+		//for test
 	int tmp = j;
 	j = i ;
 	i = tmp;
