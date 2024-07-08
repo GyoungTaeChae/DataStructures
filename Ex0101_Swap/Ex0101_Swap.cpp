@@ -2,29 +2,31 @@
 
 using namespace std;
 
-/*
+
 int MySwapValue(int i, int j)
 {
-	// TODO:
+	int tmp = j;
+	j = i ;
+	i = tmp;
 
-	return ? ;
+	return i,j ;
 }
 
-void MySwapPtr(int* i, int* j)
-{
-	// TODO:
-}
+// void MySwapPtr(int* i, int* j)
+// {
+// 	// TODO:
+// }
 
-void MySwapRef(int& i, int& j)
-{
-	// TODO:
-}
-*/
+// void MySwapRef(int& i, int& j)
+// {
+// 	// TODO:
+// }
+// */
 
-bool CheckSorted(int a, int b)
-{
-	return false;
-}
+// bool CheckSorted(int a, int b)
+// {
+// 	return false;
+// }
 
 int main()
 {
@@ -35,7 +37,8 @@ int main()
 
 		cout << a << " " << b << endl;
 
-		// TODO:
+		MySwapValue(a,b);
+		
 
 		cout << a << " " << b << endl;
 	}
@@ -60,5 +63,5 @@ int main()
 		// TODO:
 	}
 
-	return 0;
+	return 0; 
 }
