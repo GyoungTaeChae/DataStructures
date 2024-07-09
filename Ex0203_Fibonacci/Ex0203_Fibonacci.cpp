@@ -23,7 +23,9 @@ int Fibonacci(int n)
 
 int RecurFibonacci(int n)
 {
-	return 0;
+	if(n==0){return 0;}
+	else if(n==1){return 1;}
+	else {return RecurFibonacci(n-1)+RecurFibonacci(n-2);}
 }
 
 int main()
@@ -32,18 +34,18 @@ int main()
 	// Fibonnacci : 0   1   1   2   3   5   8  13  21  34  55  89 144 233 377
 	// Fibonnacci : 0   1   1   2   3   5   8  13  21  34  55  89 144 233 377
 
-	cout << "Input     : ";
+	cout << "Input                   : ";
 	for (int i = 0; i < 15; i++)
 		cout << setw(3) << i << " ";
 	cout << endl;
 
 	// Fibonnacci
-	cout << "Fibonnacci: ";
+	cout << "Fibonnacci using For    : ";
 	for (int i = 0; i < 15; i++)
 		cout << setw(3) << Fibonacci(i) << " ";
 	cout << endl;
 
-	cout << "Fibonnacci: ";
+	cout << "Fibonnacci using Recur  : ";
 	for (int i = 0; i < 15; i++)
 		cout << setw(3) << RecurFibonacci(i) << " ";
 	cout << endl;
