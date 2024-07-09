@@ -13,19 +13,12 @@ int Fibonacci(int n)
 		return 1; // F1 = 1
 	else
 	{
-		int prev1 = 0;
-		int prev2 = 1;
 		int fn = 0;
-		for (int i = 2; i<=n; i++){
-			fn = prev1+prev2;
-
-			prev1 = prev2;
-			prev2 = fn;
-
-		}
-
+		//TODO
 		return fn;
 	}
+
+	
 }
 
 int RecurFibonacci(int n)
