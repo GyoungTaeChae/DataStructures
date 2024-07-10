@@ -136,6 +136,17 @@ MyString MyString::Insert(MyString t, int start)
 int MyString::Find(MyString pat)
 {
 	//TODO:
+	for (int start = 0; start <= Length()-pat.Length(); start++)
+	{
+		for (int j = 0 ; j<pat.Length(); j++)
+		{
+			if(str_[start+j] != pat.str_[j])
+				break;
+
+			if(j==pat.Length() -1 )
+				return start;
+		}
+	}
 
 	return -1;
 }
