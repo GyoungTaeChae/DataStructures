@@ -2,23 +2,16 @@
 #include <cassert>
 #include <algorithm> // swap
 #include <iomanip> // setw
-
+#include <vector>
 using namespace std;
 
-int Fibonacci(int n)
-{
-	if (n == 0)
-		return 0; // F0 = 0 
-	else if (n == 1)
-		return 1; // F1 = 1
-	else
-	{
-		int fn = 0;
-		//TODO
-		return fn;
-	}
-
-	
+int Fibonacci(int n) {
+    if (n == 0)
+        return 0; // F0 = 0 
+    else if (n == 1)
+        return 1; // F1 = 1
+    else {
+    
 }
 
 int RecurFibonacci(int n)
