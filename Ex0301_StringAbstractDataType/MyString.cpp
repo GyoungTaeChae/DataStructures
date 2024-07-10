@@ -13,10 +13,13 @@ MyString::MyString()
 MyString::MyString(const char* init)
 {
 	// 크기(size_) 결정
-
-	// 메모리 할당
-
-	// 데이터 복사
+	size_ = 0;
+	while (init[size_]!= '\0')
+		size_++;
+	
+	str_ = new char[size_];
+	memcpy(str_,init,size_);
+	
 }
 
 // MyString의 다른 instance로부터 초기화
@@ -26,11 +29,21 @@ MyString::MyString(const MyString& str)
 	// 소멸시 오류 발생
 	// 여기서는 새로 메모리를 할당 받아서 복사
 
+	size_ = str.size_;
+
+	str_ = new char[size_];
+	memcpy(str_,str.str_,size_);
+
 }
 
 MyString::~MyString()
 {
 	// 메모리 해제
+	if(str_ != nullptr){
+		delete[] str_;
+		str_ = nullptr;
+		size_ = 0;
+	}
 }
 
 bool MyString::IsEmpty()
@@ -41,8 +54,15 @@ bool MyString::IsEmpty()
 bool MyString::IsEqual(const MyString& str) // 편의상 참조& 사용
 {
 	// 힌트: str.str_, str.size_ 가능
+	if (this->size_ != str.size_){return false;}
 
-	return false;
+	for(int i=0; i<=this->size_; i++){
+		if (this->str_[i] != str.str_[i]){
+			return false;
+		}
+	}
+
+	return true;
 }
 
 int MyString::Length()
@@ -53,6 +73,7 @@ int MyString::Length()
 void MyString::Resize(int new_size)
 {
 	// 메모리 재할당과 원래 갖고 있던 내용 복사
+	
 }
 
 // 인덱스 start위치의 글자부터 num개의 글자로 새로운 문자열 만들기

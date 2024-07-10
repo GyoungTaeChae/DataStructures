@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm> // swap
 #include <cassert>
-
+#include <cstring>
 class MyString
 {
 public:
