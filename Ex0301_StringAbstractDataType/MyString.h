@@ -1,38 +1,7 @@
-﻿#pragma once
-
+﻿
 #include <iostream>
 #include <algorithm> // swap
 #include <cassert>
-
-// Abstract Data Type 개념 소개
-// 보충: 원래 ADT는 특정 언어에 종속되는 개념은 아닙니다.
-
-/* Horowitz 교재
-An abstract data type (ADT) is a data type
-that is organized in such a way that the specification of the operations
-on the objects is separated from the representation of the objects and
-the implementation of the operations.
-*/
-
-/*
-
-class MyArray // 공부용은 이름앞에 My를 붙여서 혼동 방지
-{
-public:
-	MyArray(int size);
-
-	~MyArray(); // ADT라기 보다는 언어 특성
-
-	float Retrieve(int i);
-
-	void Store(int i, float x);
-
-private:
-	float* arr_ = 0;
-	int size_ = 0;
-}
-
-*/
 
 class MyString
 {

@@ -13,6 +13,7 @@ int main()
 	// Find()
 	{
 		MyString str1("hi hay he hel hello llo ello el el o!");
+		
 		cout << str1.Find(MyString("hell")) << endl;
 
 		cout << "Found at " << MyString("ABCDEF").Find(MyString("A")) << endl;
