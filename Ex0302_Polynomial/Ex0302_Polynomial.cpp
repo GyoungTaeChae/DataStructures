@@ -28,7 +28,8 @@ int main()
 	p2.Print(); // 1*x^1 + 3*x^2
 
 	cout << endl;
-
+	//       1*x^1 + 3*x^2
+	// 1 + 1.5*x^1 + 2*x^2
 	cout << "Add()" << endl;
 
 	Polynomial psum = p1.Add(p2);
