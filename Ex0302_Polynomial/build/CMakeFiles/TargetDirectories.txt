@@ -1,0 +1,3 @@
+/home/cgt20/Codingtest/DataStructures/Ex0302_Polynomial/build/CMakeFiles/rebuild_cache.dir
+/home/cgt20/Codingtest/DataStructures/Ex0302_Polynomial/build/CMakeFiles/edit_cache.dir
+/home/cgt20/Codingtest/DataStructures/Ex0302_Polynomial/build/CMakeFiles/PolynomialExecutable.dir
