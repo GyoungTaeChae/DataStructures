@@ -10,20 +10,20 @@ int main()
 	// 1 + 2*x^10000000 을 앞의 방식으로는 10000000 + 1 크기의 배열이 필요하지만 
 	// 여기서는 Term 2개로 가능
 
-	SparsePolynomial p1; // max_degree는 기본값으로 설정
+	// SparsePolynomial p1; // max_degree는 기본값으로 설정
 
-	// exp가 작은 항부터 추가한다고 가정
-	p1.NewTerm(1.0f, 0);	// 1 * x^0 = 1
-	p1.NewTerm(1.5f, 1);	// 1.5 * x^1
-	p1.NewTerm(2.0f, 2);	// 2 * x^2
+	// // exp가 작은 항부터 추가한다고 가정
+	// p1.NewTerm(1.0f, 0);	// 1 * x^0 = 1
+	// p1.NewTerm(1.5f, 1);	// 1.5 * x^1
+	// p1.NewTerm(2.0f, 2);	// 2 * x^2
 
-	p1.Print(); // 1 + 1.5*x^1 + 2*x^2
+	// p1.Print(); // 1 + 1.5*x^1 + 2*x^2
 
-	cout << p1.Eval(0.0f) << endl; // 1 + 1.5*0 + 2*0^2 = 1
-	cout << p1.Eval(1.0f) << endl; // 1 + 1.5*1 + 2*1^2 = 4.5
-	cout << p1.Eval(2.0f) << endl; // 1 + 1.5*2 + 2*2^2 = 1 + 3 + 8 = 12
+	// cout << p1.Eval(0.0f) << endl; // 1 + 1.5*0 + 2*0^2 = 1
+	// cout << p1.Eval(1.0f) << endl; // 1 + 1.5*1 + 2*1^2 = 4.5
+	// cout << p1.Eval(2.0f) << endl; // 1 + 1.5*2 + 2*2^2 = 1 + 3 + 8 = 12
 
-	cout << endl;
+	// cout << endl;
 
 	// Add() Test1
 	cout << "Add() Test" << endl;
@@ -91,3 +91,8 @@ int main()
 
 	return 0;
 }
+//(gdb) break main
+// (gdb) run
+// (gdb) next
+// (gdb) print some_variable
+// (gdb) continue
