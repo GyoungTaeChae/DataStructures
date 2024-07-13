@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o -c /Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp",
+  "file": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp",
+  "output": "CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o"
+},
+{
+  "directory": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o -c /Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp",
+  "file": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp",
+  "output": "CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o"
+}
+]
