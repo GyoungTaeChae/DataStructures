@@ -88,7 +88,7 @@ SparsePolynomial SparsePolynomial::Add(const SparsePolynomial& poly)
 
 	return temp;
 }
-
+1
 void SparsePolynomial::Print()
 {
 	bool is_first = true; // 더하기 출력시 확인용
