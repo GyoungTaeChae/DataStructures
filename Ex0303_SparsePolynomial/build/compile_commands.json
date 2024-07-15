@@ -1,0 +1,13 @@
+[
+{
+  "directory": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/build",
+  "command": "/usr/bin/c++   -I../  -g   -std=gnu++11 -o CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o -c /home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp",
+  "file": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp"
+},
+
+{
+  "directory": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/build",
+  "command": "/usr/bin/c++   -I../  -g   -std=gnu++11 -o CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o -c /home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp",
+  "file": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp"
+}
+]
