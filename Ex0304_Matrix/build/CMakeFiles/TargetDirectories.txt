@@ -1,3 +1,0 @@
-/home/cgt20/Codingtest/DataStructures/Ex0304_Matrix/build/CMakeFiles/rebuild_cache.dir
-/home/cgt20/Codingtest/DataStructures/Ex0304_Matrix/build/CMakeFiles/edit_cache.dir
-/home/cgt20/Codingtest/DataStructures/Ex0304_Matrix/build/CMakeFiles/Matrix.dir
