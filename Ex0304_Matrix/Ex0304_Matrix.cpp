@@ -4,6 +4,9 @@
 
 int main()
 {
+	
+	std::cout << "start" << std::endl;
+
 	using namespace std;
 
 	Matrix m1(3, 4);
@@ -17,6 +20,7 @@ int main()
 
 	m1.Print();
 
+	std::cout << "print called" << std::endl;
 	cout << endl;
 
 	Matrix add = m1.Add(m1); // 자기 자신과 더하기
