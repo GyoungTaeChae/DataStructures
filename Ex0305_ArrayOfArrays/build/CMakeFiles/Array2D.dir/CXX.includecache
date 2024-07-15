@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cgt20/Codingtest/DataStructures/Ex0305_ArrayOfArrays/Array2D.cpp
+Array2D.h
+/home/cgt20/Codingtest/DataStructures/Ex0305_ArrayOfArrays/Array2D.h
+algorithm
+-
+cassert
+-
+iostream
+-
+
+/home/cgt20/Codingtest/DataStructures/Ex0305_ArrayOfArrays/Array2D.h
+
+/home/cgt20/Codingtest/DataStructures/Ex0305_ArrayOfArrays/Ex0305_ArrayOfArrays.cpp
+Array2D.h
+/home/cgt20/Codingtest/DataStructures/Ex0305_ArrayOfArrays/Array2D.h
+algorithm
+-
+cassert
+-
+iostream
+-
+
