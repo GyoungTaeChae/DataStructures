@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "../SparsePolynomial"
-  "../SparsePolynomial.pdb"
+  "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial"
+  "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.pdb"
   "CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o"
+  "CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o.d"
   "CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o"
+  "CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

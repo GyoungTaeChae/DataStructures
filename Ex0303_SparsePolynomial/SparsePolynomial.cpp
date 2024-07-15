@@ -34,34 +34,61 @@ void SparsePolynomial::NewTerm(float coef, int exp)
 
 	num_terms_++;
 }
-
+	// Term* terms_ = nullptr;
+	// int capacity_ = 0;
+	// int num_terms_ = 0;
 float SparsePolynomial::Eval(float x)
 {
 	float temp = 0.0f;
 
 	// TODO:
+	for(int i = 0; i<capacity_; i++)
+	{
+		temp += terms_[i].coef * std::pow(x,terms_[i].exp);
+	}
 
 	return temp;
 }
 
 SparsePolynomial SparsePolynomial::Add(const SparsePolynomial& poly)
 {
-	// this와 poly의 terms_가 exp의 오름차순으로 정렬되어 있다고 가정
-	// 하나의 다항식 안에 exp가 중복되는 term이 없다라고 가정 (한 exp는 하나의 term만 존재)
-
-	// 간단한 방법 (메모리를 더 사용하는 방법)
-	// - 1. 최대 exp를 찾는다.
-	// - 2. 필요한 크기의 Polynomial을 만든다. (Sparse 아님)
-	// - 3. 더하면서 Polynomial에 업데이트 한다. 구조가 고정되어 있어서 쉽다.
-	// - 4. Polynomial을 SparsePolynomial로 변환한다.
-
 	SparsePolynomial temp;
+	int index1 = 0;
+	int index2 = 0;
 
-	// TODO:
+	while((index1 < this->num_terms_) && (index2<poly.num_terms_))
+	{
+		if(this->terms_[index1].exp < poly.terms_[index2].exp)
+		{
+			temp.NewTerm(this->terms_[index1].coef,this->terms_[index1].exp);
+			index1++;
+		}
+		else if(this->terms_[index1].exp > poly.terms_[index2].exp)
+		{
+			temp.NewTerm(poly.terms_[index2].coef,poly.terms_[index2].exp);
+			index2++;
+		}
+		else 
+		{
+			temp.NewTerm((this->terms_[index1].coef+poly.terms_[index2].coef),this->terms_[index1].exp);
+			index1++;
+			index2++;
+		}
+	}
+			// 남은 term들 추가
+		for (; index1 < this->num_terms_; index1++)
+		{
+			temp.NewTerm(this->terms_[index1].coef,this->terms_[index1].exp);
+		}
+
+		for (; index2 < poly.num_terms_; index2++)
+		{
+			temp.NewTerm(poly.terms_[index2].coef,poly.terms_[index2].exp);
+		}		
 
 	return temp;
 }
-
+1
 void SparsePolynomial::Print()
 {
 	bool is_first = true; // 더하기 출력시 확인용

@@ -1,5 +1,6 @@
 [
 {
+<<<<<<< HEAD
   "directory": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/build",
   "command": "/usr/bin/c++   -I../  -g   -std=gnu++11 -o CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o -c /home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp",
   "file": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp"
@@ -9,5 +10,17 @@
   "directory": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/build",
   "command": "/usr/bin/c++   -I../  -g   -std=gnu++11 -o CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o -c /home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp",
   "file": "/home/cgt20/Codingtest/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp"
+=======
+  "directory": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o -c /Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp",
+  "file": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/Ex0303_SparsePolynomial.cpp",
+  "output": "CMakeFiles/SparsePolynomial.dir/Ex0303_SparsePolynomial.cpp.o"
+},
+{
+  "directory": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial -g -std=gnu++11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o -c /Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp",
+  "file": "/Users/cgt/Workspace/DataStructures/Ex0303_SparsePolynomial/SparsePolynomial.cpp",
+  "output": "CMakeFiles/SparsePolynomial.dir/SparsePolynomial.cpp.o"
+>>>>>>> 65bdc36d3452f5339a39a2bea7505a56f8fb10ad
 }
 ]

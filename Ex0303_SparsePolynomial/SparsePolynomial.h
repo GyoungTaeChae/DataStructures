@@ -18,7 +18,15 @@ public:
 	{
 		if (terms_) delete[] terms_;
 	}
-
+	SparsePolynomial(const SparsePolynomial& poly)
+    {
+        this->capacity_ = poly.capacity_;
+        this->num_terms_ = poly.num_terms_;
+        terms_ = new Term[capacity_];
+        for (int i = 0; i < capacity_; i++)
+            terms_[i] = poly.terms_[i];
+        // memcpy() 사용도 가능
+    }
 	// 새로운 항을 추가할 때 자기 위치를 찾아서 넣어줘야 함
 	void NewTerm(float coef, int exp);
 

@@ -21,3 +21,4 @@ target_include_directories(SparsePolynomial PUBLIC "${PROJECT_SOURCE_DIR}")
 set_target_properties(SparsePolynomial PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}"
 )
+set(CMAKE_BUILD_TYPE Debug)
