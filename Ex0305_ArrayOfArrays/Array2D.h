@@ -22,6 +22,7 @@ public:
 	void Print();
 
 private:
+	float* temp;
 	float** arrays_ = nullptr; // 2중 포인터
 	int num_rows_ = 0;
 	int num_cols_ = 0;
