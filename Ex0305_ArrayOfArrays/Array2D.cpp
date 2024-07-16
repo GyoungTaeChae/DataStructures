@@ -6,10 +6,6 @@
 
 using namespace std;
 
-	// float** arrays_ = nullptr; // 2중 포인터
-	// int num_rows_ = 0;
-	// int num_cols_ = 0;
-
 Array2D::Array2D(int num_rows, int num_cols)
 {
 	// float *array = new float[len]; 
@@ -26,11 +22,19 @@ Array2D::Array2D(int num_rows, int num_cols)
 	for(int r = 0; r< num_rows_; r++)
 		for (int c = 0; c<num_cols_;c++)
 			arrays_[r][c] = 0.0f;
-			
+
 }
+
 // 복사 생성자 (b를 복사)
 Array2D::Array2D(const Array2D& b)
 {
+	arrays_ = new float* [b.num_rows_];
+
+	for (int r =0; r<b.num_rows_; r++)
+	{
+		arrays_[r] = new float[b.num_cols_];
+	}
+	
 	this->num_rows_ = b.num_rows_;
 	this->num_cols_ = b.num_cols_;
 
@@ -38,7 +42,7 @@ Array2D::Array2D(const Array2D& b)
 	{
 		for(int j = 0; j<num_cols_; j++)
 		{
-			arrays_[i][j] = *b.arrays_[i];
+			arrays_[i][j] = b.arrays_[i][j];
 		}
 	}
 
@@ -48,7 +52,13 @@ Array2D::Array2D(const Array2D& b)
 Array2D::~Array2D()
 {
 
-	if (arrays_) delete[] arrays_;
+	if (arrays_) 
+	{
+		for(int r = 0; r< num_rows_; r++)
+			delete[] arrays_[r];
+
+		delete[] arrays_;
+	}
 	//TODO:
 }
 
