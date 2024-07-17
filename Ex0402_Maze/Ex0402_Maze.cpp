@@ -6,6 +6,10 @@ using namespace std;
 
 constexpr int kNumRows = 10;
 constexpr int kNumCols = 9;
+//1 은 못가는곳 
+//0은 갈수잇는곳
+//S->G까지 가는 경로 하나를 찾으면됨
+//방문한곳은 X로표시 
 
 char maze[kNumRows][kNumCols] =
 {
@@ -75,9 +79,6 @@ void StackMaze()
 	Stack<Pos> s;
 
 	Pos start = { 1, 1 }; // i = 1, j = 1  시작 지점
-	//Pos start;
-	//start.row = 1;
-	//start.col = 1;
 
 	s.Push(start); // s.Push({1, 1});
 
@@ -105,11 +106,12 @@ void StackMaze()
 int main()
 {
 	PrintMaze();
-
+	std::cout << ""<<std::endl;
+	std::cout << ""<<std::endl;
 	//RecurMaze({ 1, 1 });
-
 	StackMaze();
-
+	std::cout << ""<<std::endl;
+	std::cout << ""<<std::endl;
 	PrintMaze();
 
 	return 0;
