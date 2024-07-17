@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Ex0401_Stack.dir/Ex0401_Stack.cpp.o  -o ../Ex0401_Stack 

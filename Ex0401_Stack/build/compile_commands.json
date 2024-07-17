@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/cgt20/Codingtest/DataStructures/Ex0401_Stack/build",
+  "command": "/usr/bin/c++   -I../../shared  -g   -o CMakeFiles/Ex0401_Stack.dir/Ex0401_Stack.cpp.o -c /home/cgt20/Codingtest/DataStructures/Ex0401_Stack/Ex0401_Stack.cpp",
+  "file": "/home/cgt20/Codingtest/DataStructures/Ex0401_Stack/Ex0401_Stack.cpp"
+}
+]

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cgt20/Codingtest/DataStructures/Ex0306_SparseMatrix/Ex0306_SparseMatrix.cpp
+iostream
+-
+SparseMatrix.h
+/home/cgt20/Codingtest/DataStructures/Ex0306_SparseMatrix/SparseMatrix.h
+
+/home/cgt20/Codingtest/DataStructures/Ex0306_SparseMatrix/SparseMatrix.h
+

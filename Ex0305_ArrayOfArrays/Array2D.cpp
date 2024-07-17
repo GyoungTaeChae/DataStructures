@@ -12,10 +12,11 @@ Array2D::Array2D(int num_rows, int num_cols)
 	// float **arrays_ = new float* [num_rows];
     arrays_ = new float* [num_rows]; // 포인터의 배열
 
-    for (int r = 0; r < num_rows; r++)
+	for (int r = 0; r < num_rows; r++)
     {
         arrays_[r] = new float[num_cols] ; // 값의 배열
     }
+
 	this->num_cols_ = num_cols;
 	this->num_rows_ = num_rows;
 

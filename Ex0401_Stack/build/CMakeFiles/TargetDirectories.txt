@@ -1,0 +1,3 @@
+/home/cgt20/Codingtest/DataStructures/Ex0401_Stack/build/CMakeFiles/edit_cache.dir
+/home/cgt20/Codingtest/DataStructures/Ex0401_Stack/build/CMakeFiles/rebuild_cache.dir
+/home/cgt20/Codingtest/DataStructures/Ex0401_Stack/build/CMakeFiles/Ex0401_Stack.dir

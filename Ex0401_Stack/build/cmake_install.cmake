@@ -1,4 +1,4 @@
-# Install script for directory: /home/cgt20/Codingtest/DataStructures/Ex0304_Matrix
+# Install script for directory: /home/cgt20/Codingtest/DataStructures/Ex0401_Stack
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cgt20/Codingtest/DataStructures/Ex0304_Matrix/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/cgt20/Codingtest/DataStructures/Ex0401_Stack/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

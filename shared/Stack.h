@@ -2,7 +2,7 @@
 
 #include <cassert>
 #include <iostream>
-
+#include <cstring>
 template<typename T> // 템플릿 사용
 class Stack
 {
@@ -29,12 +29,12 @@ public:
 
 	bool IsEmpty() const
 	{
-		return false; // TODO:
+		return top_ == -1; 
 	}
 
 	int Size() const
 	{
-		return 0; //TODO:
+		return top_+1; //TODO:
 	}
 
 	void Print()
@@ -57,16 +57,22 @@ public:
 	// Insert item into the TOP of the stack
 	void Push(const T& item)
 	{
+
 		// TODO: 필요하면 리사이즈 
 
 		// TODO:
+		if (top_ == capacity_-1)
+			{Resize(capacity_*2);}
+		stack_[++top_] = item;
+
 	}
 
 	// Delete the TOP element of the stack
 	void Pop()
 	{
 		assert(!IsEmpty());
-
+		stack_[top_].~T();
+		top_--;
 		// TODO:
 	}
 
