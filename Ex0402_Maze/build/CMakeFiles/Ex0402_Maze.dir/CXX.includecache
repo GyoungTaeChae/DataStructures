@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cgt20/Codingtest/DataStructures/Ex0402_Maze/Ex0402_Maze.cpp
+iostream
+-
+../shared/Stack.h
+/home/cgt20/Codingtest/DataStructures/shared/Stack.h
+
+/home/cgt20/Codingtest/DataStructures/shared/Stack.h
+cassert
+-
+iostream
+-
+cstring
+-
+
