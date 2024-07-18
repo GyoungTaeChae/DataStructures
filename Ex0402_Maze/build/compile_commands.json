@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/cgt20/Codingtest/DataStructures/Ex0402_Maze/build",
+  "command": "/usr/bin/c++   -I../../shared  -g   -o CMakeFiles/Ex0402_Maze.dir/Ex0402_Maze.cpp.o -c /home/cgt20/Codingtest/DataStructures/Ex0402_Maze/Ex0402_Maze.cpp",
+  "file": "/home/cgt20/Codingtest/DataStructures/Ex0402_Maze/Ex0402_Maze.cpp"
+}
+]
