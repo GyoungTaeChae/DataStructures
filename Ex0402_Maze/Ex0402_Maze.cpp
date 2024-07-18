@@ -68,12 +68,6 @@ void RecurMaze(Pos p)
 	}
 }
 
-//조기 종료가 가능한 버전
-//int RecurMaze(Pos p)
-//{
-//	// TODO:
-//}
-
 void StackMaze()
 {
 	Stack<Pos> s;

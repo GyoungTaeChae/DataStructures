@@ -45,7 +45,7 @@ void MoveDisk(int from, int to)
 
 void RecurMoveDisks(int n, int from, int temp, int to)
 {
-	// TODO:
+	
 }
 
 int main()
