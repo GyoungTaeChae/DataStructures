@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Ex0501_Queue.dir/Ex0501_Queue.cpp.o  -o ../Ex0501_Queue 
