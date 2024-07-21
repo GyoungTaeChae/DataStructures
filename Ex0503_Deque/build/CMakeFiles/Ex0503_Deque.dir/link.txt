@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Ex0503_Deque.dir/Ex0503_Deque.cpp.o  -o ../Ex0503_Deque 
