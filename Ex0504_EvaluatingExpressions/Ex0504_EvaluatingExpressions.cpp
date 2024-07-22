@@ -158,6 +158,7 @@ int EvalPostfix(Queue<char>& q)
 			else if (c == '-') 	{s.Push(tmp1-tmp2);}
 			else if (c == '*') 	{s.Push(tmp1*tmp2);}
 			else if (c == '/') 	{s.Push(tmp1/tmp2);}
+			
 			else
 			{
 				cout << "Wrong operator" << endl;
