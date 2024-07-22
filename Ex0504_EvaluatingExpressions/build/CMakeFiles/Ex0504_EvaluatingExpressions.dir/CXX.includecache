@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cgt20/Codingtest/DataStructures/Ex0504_EvaluatingExpressions/Ex0504_EvaluatingExpressions.cpp
+iostream
+-
+../shared/Stack.h
+/home/cgt20/Codingtest/DataStructures/shared/Stack.h
+../shared/Queue.h
+/home/cgt20/Codingtest/DataStructures/shared/Queue.h
+
+/home/cgt20/Codingtest/DataStructures/shared/Queue.h
+cassert
+-
+iostream
+-
+iomanip
+-
+
+/home/cgt20/Codingtest/DataStructures/shared/Stack.h
+cassert
+-
+iostream
+-
+cstring
+-
+

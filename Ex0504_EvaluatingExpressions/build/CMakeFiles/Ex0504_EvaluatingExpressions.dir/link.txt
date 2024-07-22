@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Ex0504_EvaluatingExpressions.dir/Ex0504_EvaluatingExpressions.cpp.o  -o ../Ex0504_EvaluatingExpressions 

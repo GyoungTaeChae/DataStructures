@@ -23,14 +23,17 @@ int EvalPostfix(Queue<char>& q);
 		  = 19
 */
 
+//infix to postfix
+//postfix calculation 
+//stack은 연산자 우선순위가 높은것을 먼저 계산하는 도구로서 사용
+
 int main()
 {
-	// 예제에서는 빈칸 없이 한 자리 숫자만 가능
 
-	//const char infix[] = "8/2+(3+4)*5-1*2";
-	const char infix[] = "1+(1*2+3)*4";
-	//const char infix[] = "1+2*3+3";
-	//const char infix[] = "1+2*(3+1)";
+	// const char infix[] = "8/2+(3+4)*5-1*2";
+	// const char infix[] = "1+(1*2+3)*4";
+	// const char infix[] = "1+2*3+3";
+	const char infix[] = "1+2*(3+1)";
 	const int size = sizeof(infix) / sizeof(char) - 1;
 
 	// 큐에 모두 넣기
@@ -78,28 +81,38 @@ void InfixToPostfix(Queue<char>& q, Queue<char>& output)
 
 		cout << c << endl;
 
-		/*
-		if (c >= '0' && c <= '9') // 숫자(피연산자)라면 output에 추가
-			...;
-		else if (c == '(') // 여는 괄호라면 스택에 추가
-			...;
-		else if (c == ')') // 닫는 괄호를 만나면
+	if (c >= '0' && c <= '9') // 숫자(피연산자)라면 output에 추가
+		output.Enqueue(c);
+	else if (c == '(') // 여는 괄호라면 스택에 추가
+		s.Push(c);
+	else if (c == ')') // 닫는 괄호를 만나면
+	{
+		// 여는 괄호 전까지를 스택에서 꺼내서 출력에 넣기
+		while (s.Top() != '(')
 		{
-			// 여는 괄호 전까지를 스택에서 꺼내서 출력에 넣기
-			// 여는 괄호 제거
+			output.Enqueue(s.Top());
+			s.Pop();
 		}
-		else // 연산자를 만나면
-		{
-			// 스택에서 c보다 우선순위가 높거나 같은 것들을 꺼내서 추가
-			// c는 스택에 추가
-		}
-		*/
+		s.Pop(); // 여는 괄호 제거
+	}
+	else // 연산자를 만나면
+	{
+	// 스택에서 c보다 우선순위가 높거나 같은 것들을 꺼내서 추가
+	while (!s.IsEmpty() && Prec(c) <= Prec(s.Top()))
+	{
+		output.Enqueue(s.Top());
+		s.Pop();
+	}
 
-		cout << "Stack: ";
-		s.Print();
-		cout << "Output:";
-		output.Print();
-		cout << endl;
+	// c는 스택에 추가
+	s.Push(c);
+	}
+
+	cout << "Stack: ";
+	s.Print();
+	cout << "Output:";
+	output.Print();
+	cout << endl;
 	}
 
 	// 스택에 남아있는 것들을 모두 추가
@@ -110,49 +123,48 @@ void InfixToPostfix(Queue<char>& q, Queue<char>& output)
 	}
 }
 
+
+
 int EvalPostfix(Queue<char>& q)
 {
 	Stack<int> s;
-
 	while (!q.IsEmpty())
 	{
 		char c = q.Front();
 		q.Dequeue();
 
-		cout << c << endl;
+		std::cout << c << endl;
 
-		/*
+		
 		if (c != '+' && c != '-' && c != '*' && c != '/')
 		{
 			// 입력이 연산자가 아니면 일단 저장
 			// 문자를 숫자로 변환 c - '0' 예: int('9' - '0') -> 정수 9
+			int d = c - '0';
+			s.Push(d);
+			s.Print();
 		}
 		else
 		{
-			cout << "Operator: " << c << endl;
+			std::cout << "Operator: " << c << endl;
 
 			// 입력이 연산자이면 스택에서 꺼내서 연산에 사용
+			int tmp1 =s.Top();
+				s.Pop();
+				int tmp2 =s.Top();
+				s.Pop();
 
-			if (c == '+') {
-				...
-			}
-			else if (c == '-') {
-				...
-			}
-			else if (c == '*') {
-				...
-			}
-			else if (c == '/')
-			{
-				...
-			}
+			if (c == '+') 	   	{s.Push(tmp1+tmp2);}
+			else if (c == '-') 	{s.Push(tmp1-tmp2);}
+			else if (c == '*') 	{s.Push(tmp1*tmp2);}
+			else if (c == '/') 	{s.Push(tmp1/tmp2);}
 			else
 			{
 				cout << "Wrong operator" << endl;
 				exit(-1); // 강제 종료
 			}
 		}
-		*/
+		
 
 		cout << "Stack: ";
 		s.Print();
