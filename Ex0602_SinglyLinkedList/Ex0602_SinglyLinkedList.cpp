@@ -18,9 +18,8 @@ int main()
 
 	list.Print();
 
-	// copy constructor
 	{
-		SinglyLinkedList<int> list2 = list; // copy constructor
+		SinglyLinkedList<int> list2 = list; 
 		list2.SetPrintDebug(false);
 		list2.Print();
 	}
@@ -36,7 +35,9 @@ int main()
 	list.Print();
 	list.Remove(temp);
 	list.Print();
-
+	list.PushBack(4);
+	list.PushFront(1);
+	list.PushBack(5);
 	// PopFront()/Back() 테스트
 	for (int i = 0; i < 5; i++)
 	{
@@ -50,7 +51,7 @@ int main()
 			cout << list.Front() << " " << list.Back() << endl;
 	}
 
-	// Edge case 테스트 주의
+	// // Edge case 테스트 주의
 
 	return 0;
 }

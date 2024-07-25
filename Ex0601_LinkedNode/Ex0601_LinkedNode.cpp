@@ -103,7 +103,6 @@ int main()
 		cout << "Delete" << *temp << endl;
 		current = current->next;
 		delete temp;
-		
 	}
 
 	return 0;
