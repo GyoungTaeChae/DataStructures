@@ -61,15 +61,18 @@ public:
 	T Front()
 	{
 		assert(first_);
-
-		return T(); // TODO: 수정
+		return first_->item;
 	}
 
 	T Back()
 	{
 		assert(first_);
-
-		return T(); // TODO: 수정
+		Node* current = first_;
+		while (current->next)
+		{
+			current = current->next;
+		}
+		return current->item;
 	}
 
 	Node* Find(T item)
@@ -149,7 +152,11 @@ public:
 
 		assert(first_);
 
-		// TODO: 메모리 삭제
+		Node* temp = first_;
+		first_ = first_->next;
+
+		delete temp;
+
 	}
 
 	void PopBack()
@@ -163,9 +170,26 @@ public:
 
 		// 맨 뒤에서 하나 앞의 노드를 찾아야 합니다.
 
+		
+		if(first_->next == nullptr)
+		{
+			delete first_;
+			first_ = nullptr;
+			return;
+		}
+
 		assert(first_);
 
-		// TODO: 메모리 삭제
+		Node* Second_last = first_;
+
+		while(Second_last->next->next)
+		{
+			Second_last= Second_last->next;
+		}
+		Node* temp = Second_last->next;
+		Second_last->next = Second_last->next->next;
+		
+		delete temp;
 	}
 
 	void Reverse()
