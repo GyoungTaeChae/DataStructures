@@ -19,12 +19,14 @@ public:
 
 	SinglyLinkedList(const SinglyLinkedList& list)
 	{
+		// TODO: 연결 리스트 복사
 		Node* current = list.first_;
-		while(current)
+		while (current != nullptr)
 		{
 			this->PushBack(current->item);
 			current = current->next;
 		}
+
 	}
 
 	~SinglyLinkedList()
@@ -44,15 +46,15 @@ public:
 
 	int Size()
 	{
-		int size = 1;
+		int size = 0;
 		Node* current = first_;
-
-		while (current->next != nullptr)
+		while (current)
 		{
+			current = current->next;
 			size++;
-			current = current->next ;
 		}
-		
+		// TODO: size를 하나하나 세어서 반환
+
 		return size;
 	}
 
@@ -74,25 +76,23 @@ public:
 	{
 		// TODO: item이 동일한 노드 포인터 반환
 		Node* current = first_;
-
 		while(current)
 		{
 			if(current->item == item)
-				return current;	
-
-			current = current->next;
+				return current;
+			
+			current= current->next;
 		}
 		return current;
 	}
 
 	void InsertBack(Node* node, T item)
 	{
-		// TODO:
-		Node* new_node = new Node;
-		new_node->item = item;
-		new_node->next = node->next;
-		node->next = new_node;
-		
+		Node* temp = new Node;
+		temp->next = node->next;
+		temp->item = item;
+		node->next = temp;
+
 	}
 
 	void Remove(Node* n)
@@ -101,54 +101,39 @@ public:
 
 		// 하나 앞의 노드를 찾아야 합니다.
 		// TODO:
-		Node* prev = first_;
-		while (prev->next)
+		Node* current = first_;
+		while(current->next != n)
 		{
-			if(prev->next == n)
-				break;
-			prev = prev->next;
+			current = current->next;
 		}
-		prev->next = n->next;
+		current->next = current->next->next;
 		delete n;
 	}
 
 	void PushFront(T item)
 	{
-		
-		if(first_ == nullptr)
-		{
-			first_ = new Node();
-			first_->item = item;
-        	first_->next = nullptr;
-		}
-		else
-		{
-			Node* new_node = new Node();
+			Node* new_node = new Node;
 			new_node->item = item;
 			new_node->next = first_;
 			first_ = new_node;
-		}
 	}
 
 	void PushBack(T item)
 	{
-		if (first_ == nullptr)
+		if (first_==nullptr)
 		{
-			first_ = new Node();
-			first_->item = item;
-        	first_->next = nullptr;
+			PushFront(item);
 		}
 		else
 		{
-			Node* new_node = new Node();
-			new_node->item = item;
-			new_node->next = nullptr;
-			
 			Node* current = first_;
-			while(current->next!=nullptr)
+			while(current->next != nullptr)
 			{
 				current = current->next;
 			}
+			Node* new_node = new Node;
+			new_node->item = item;
+			new_node->next = nullptr;
 			current->next = new_node;
 		}
 	}
@@ -163,12 +148,7 @@ public:
 		}
 
 		assert(first_);
-		
-		
-		Node* temp = first_;
-		first_ = first_->next;
 
-		delete temp;
 		// TODO: 메모리 삭제
 	}
 
@@ -184,16 +164,7 @@ public:
 		// 맨 뒤에서 하나 앞의 노드를 찾아야 합니다.
 
 		assert(first_);
-		Node* current;
 
-		while(current->next != nullptr)
-		{
-			current = current->next;
-		}
-		
-		Node* temp = current->next;
-		current->next = nullptr;
-		delete temp;
 		// TODO: 메모리 삭제
 	}
 
@@ -201,21 +172,17 @@ public:
 	{
 		Node* current = first_;
 		Node* previous = nullptr;
+		Node* temp = nullptr;
 
-		while(current != nullptr)
+		while (current)
 		{
-			Node* temp = previous; 
-			previous = current; 
-			current = current->next;
-			previous->next = temp;
-
-		}	
+		temp = current;
+		current = current->next;
+		temp->next = previous;
+		previous = temp;
+		}
 		first_ = previous;
-
 	}
-
-
-
 
 	void SetPrintDebug(bool flag)
 	{

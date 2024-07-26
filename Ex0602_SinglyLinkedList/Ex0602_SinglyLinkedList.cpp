@@ -17,12 +17,14 @@ int main()
 	list.PushBack(5);
 
 	list.Print();
+	
 
 	{
 		SinglyLinkedList<int> list2 = list; 
 		list2.SetPrintDebug(false);
 		list2.Print();
 	}
+
 
 	list.Reverse();
 	list.Print();
@@ -35,6 +37,7 @@ int main()
 	list.Print();
 	list.Remove(temp);
 	list.Print();
+	return 0;
 	list.PushBack(4);
 	list.PushFront(1);
 	list.PushBack(5);
