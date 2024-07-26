@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <cmath>
 #include "../shared/SinglyLinkedList.h"
 
 using namespace std;
@@ -8,6 +9,7 @@ struct Term
 	float coef;
 	int exp;
 };
+	// p1.NewTerm(1.0f, 0);	// 1 * x^0 = 1
 
 class LinkedPolynomial : public SinglyLinkedList<Term>
 {
@@ -15,42 +17,86 @@ public:
 	typedef SinglyLinkedList<Term>::Node Node;
 
 	void NewTerm(float coef, int exp)
-	{
-		// TODO:
+	{	
+		Term term = { coef,  exp };
+		PushBack(term);
 	}
 
 	float Eval(float x)
 	{
 		float temp = 0.0f;
-
-		// TODO:
-
-		return temp;
+		Node* current = first_;
+    while (current)
+    {
+        temp += current->item.coef * std::powf(x, float(current->item.exp));
+        current = current->next;
+    }
+    	return temp;
 	}
 
-	LinkedPolynomial Add(const LinkedPolynomial& poly)
-	{
-		// this와 poly의 terms_가 exp의 오름차순으로 정렬되어 있다고 가정
-		// 하나의 다항식 안에 exp가 중복되는 term이 없다라고 가정 (한 exp는 하나의 term만 존재)
+LinkedPolynomial Add(const LinkedPolynomial& poly)
+{
+    // this와 poly의 terms_가 exp의 오름차순으로 정렬되어 있다고 가정
+    // 하나의 다항식 안에 exp가 중복되는 term이 없다라고 가정 (한 exp는 하나의 term만 존재)
 
-		LinkedPolynomial temp;
+    LinkedPolynomial temp;
 
-		Node* i = this->first_;
-		Node* j = poly.first_;
+    Node* i = this->first_;
+    Node* j = poly.first_;
 
-		// TODO:
+    while (i && j)
+    {
+        if (i->item.exp == j->item.exp)
+        {
+            float sum = i->item.coef + j->item.coef;
+            if (sum)
+                temp.NewTerm(sum, i->item.exp);
+            i = i->next;
+            j = j->next;
+        }
+        else if (i->item.exp > j->item.exp)
+        {
+            temp.PushBack(j->item);
+            j = j->next;
+        }
+        else
+        {
+            temp.PushBack(i->item);
+            i = i->next;
+        }
+    }
 
-		return temp;
-	}
+    for (; i; i = i->next)
+        temp.PushBack(i->item);
 
-	void Print()
-	{
-		bool is_first = true; // 더하기 출력시 확인용
+    for (; j; j = j->next)
+        temp.PushBack(j->item);
 
-		// TODO:
+    return temp;
+}
 
-		cout << endl;
-	}
+void Print()
+{
+    bool is_first = true; // 더하기 출력시 확인용
+
+    Node* current = first_;
+
+    while (current)
+    {
+        if (!is_first)
+            cout << " + "; // 첫 항이 아니라면 사이사이에 더하기 출력
+
+        cout << current->item.coef;
+
+        if (current->item.exp != 0) cout << "*" << "x^" << current->item.exp;
+
+        is_first = false;
+
+        current = current->next;
+    }
+
+    cout << endl;
+}
 
 private:
 };
