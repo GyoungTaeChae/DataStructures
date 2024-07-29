@@ -21,26 +21,42 @@ public:
 	{
 	}
 
+	DoublyLinkedList(const DoublyLinkedList& list)
+	{
+		Node* current = list.first_;
+		while(current)
+		{
+			this->PushBack(current->item);
+			current = current->right;
+		}
+	}
+
 	~DoublyLinkedList()
 	{
 		Clear();
 	}
 
-	void Clear() // 모두 지워야(delete) 합니다.
+	void Clear() 
 	{
-		// TODO:
+		while(first_)
+			PopFront();
 	}
 
 	bool IsEmpty()
 	{
-		return true; // TODO:
+		return first_==nullptr; 
 	}
 
 	int Size()
 	{
 		int size = 0;
 
-		// TODO:
+		Node* current = first_;
+		while(current)
+		{
+			current = current->right;
+			size++;
+		}
 
 		return size;
 	}
@@ -58,18 +74,37 @@ public:
 			cout << "Size = " << Size() << endl;
 
 			cout << " Forward: ";
-			// TODO:
+			while(true)
+			{
+				cout<< current->item << " " ;
+				if(!current->right)
+					break;
+				current = current->right;
+			}
 			cout << endl;
 
 			cout << "Backward: ";
-			// TODO:
+			while(true)
+			{
+				cout<< current->item << " " ;
+				if(!current->left)
+					break;
+				current = current->left;
+			}
 			cout << endl;
 		}
 	}
 
 	Node* Find(T item)
 	{
-		return nullptr; // TODO:
+		Node* current = first_;
+		while(current)
+		{
+			if(current->item == item)
+				return current;
+			current = current->right;
+		}
+		return current; 
 	}
 
 	void InsertBack(Node* node, T item)
@@ -80,7 +115,17 @@ public:
 		}
 		else
 		{
-			// TODO:
+			Node* temp = new Node;
+			temp->item = item;
+			temp->right = node->right;
+			node->right = temp;
+			
+			if(temp->right)
+			{
+				temp->right->left =temp;
+			}
+			temp->left = node;
+
 		}
 	}
 
@@ -91,7 +136,15 @@ public:
 
 	void PushBack(T item)
 	{
-		// TODO:
+		Node* temp = new Node;
+		temp->item = item;
+
+
+		temp->right = first_;
+		if(first_)
+			first_->left = temp;
+		first_ = temp;
+		temp->left = nullptr;
 	}
 
 	void PopFront()
@@ -105,7 +158,11 @@ public:
 
 		assert(first_);
 
-		// TODO:
+		Node* temp = first_;
+		first_ = first_->right;
+		if(first_)
+			first_->left = nullptr;
+		delete temp;
 	}
 
 	void PopBack()
@@ -131,16 +188,17 @@ public:
 
 	T Front()
 	{
-		assert(first_);
-
-		return T(); // TODO:
+    assert(first_);
+    return first_->item;
 	}
 
 	T Back()
 	{
 		assert(first_);
-
-		return T(); // TODO:
+		Node* current = first_;
+		while (current->right) 
+			current = current->right;    
+		return current->item;
 	}
 
 protected:

@@ -9,11 +9,10 @@ int main()
 	DoublyLinkedList<int> list;
 
 	list.Print();
-	return 0;
 
 	list.PushFront(3);
 	list.Print();
-
+	return 0;
 	list.PushBack(4);
 	list.Print();
 
@@ -33,19 +32,20 @@ int main()
 	list.InsertBack(temp, 1000);
 	list.Print();
 
-	// PopFront()/Back() 테스트
-	for (int i = 0; i < 5; i++)
-	{
-		//list.PopFront();
-		//list.Print();
+	// // PopFront()/Back() 테스트
+	// for (int i = 0; i < 5; i++)
+	// {
+	// 	//list.PopFront();
+	// 	//list.Print();
 
-		list.PopBack();
-		list.Print();
+	// 	list.PopBack();
+	// 	list.Print();
 
-		if (!list.IsEmpty())
-			cout << list.Front() << " " << list.Back() << endl;
-	}
+	// 	if (!list.IsEmpty())
+	// 		cout << list.Front() << " " << list.Back() << endl;
+	// }
 
 	// Edge case 테스트 주의
+	return 0;
 
 }
