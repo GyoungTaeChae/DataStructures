@@ -9,6 +9,7 @@ int main()
 	DoublyLinkedList<int> list;
 
 	list.Print();
+	return 0;
 
 	list.PushFront(3);
 	list.Print();
@@ -47,5 +48,4 @@ int main()
 
 	// Edge case 테스트 주의
 
-	return 0;
 }

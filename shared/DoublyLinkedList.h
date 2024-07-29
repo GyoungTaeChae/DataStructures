@@ -15,7 +15,6 @@ public:
 		Node* left = nullptr;
 		Node* right = nullptr;
 
-		// 참고: prev/next가 아니라 left/right
 	};
 
 	DoublyLinkedList()
