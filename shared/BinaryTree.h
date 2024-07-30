@@ -105,7 +105,9 @@ public:
 	{
 		if (node)
 		{
-			// TODO: 힌트 Post-order
+			DeleteTree(node->left);
+			DeleteTree(node->right);
+			delete node;
 		}
 	}
 
@@ -113,7 +115,7 @@ public:
 	void Preorder(Node* node)
 	{
 		if(!node) {return ;}
-		std::cout << node->item << " ";
+		Visit(node);
 		Preorder(node->left);
 		Preorder(node->right);
 	};
@@ -123,7 +125,7 @@ public:
 	{
 		if(node == nullptr) {return;}
 		Inorder(node->left);
-		std::cout << node->item << " ";
+		Visit(node);
 		Inorder(node->right);
 	}
 
@@ -133,7 +135,7 @@ public:
 		if(node == nullptr) {return;}
 		Postorder(node->left);
 		Postorder(node->right);
-		std::cout << node->item << " ";
+		Visit(node);
 	}
 
 	void LevelOrder()
@@ -142,8 +144,8 @@ public:
 		Node* current = root_;
 		while (current)
 		{
-			Visit(current);
-			// TODO:
+			// Visit(current);
+			
 		}
 	}
 
