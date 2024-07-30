@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string> // BinaryTree 출력
+#include <cmath>
 
 #include "Queue.h"
 #include "Stack.h"
@@ -70,8 +71,15 @@ public:
 	}
 
 	int Sum(Node* node)
-	{
-		return 0; // TODO:
+	{	
+		if(!node) {return 0;}
+
+		int temp = node->item;
+
+		temp += Sum(node->right);
+		temp += Sum(node->left);
+
+		return temp;
 	}
 
 	int Height()
@@ -81,7 +89,11 @@ public:
 
 	int Height(Node* node)
 	{
-		return 0; // TODO:
+		if(!node) {return 0;}
+		int left_height = Height(node->left);
+		int right_height = Height(node->right);
+		return 1 + std::max(left_height, right_height);
+	
 	}
 
 	~BinaryTree()
@@ -100,19 +112,28 @@ public:
 	void Preorder() { Preorder(root_); }
 	void Preorder(Node* node)
 	{
-		// TODO:
+		if(!node) {return ;}
+		std::cout << node->item << " ";
+		Preorder(node->left);
+		Preorder(node->right);
 	};
 
 	void Inorder() { Inorder(root_); }
 	void Inorder(Node* node)
 	{
-		// TODO:
+		if(node == nullptr) {return;}
+		Inorder(node->left);
+		std::cout << node->item << " ";
+		Inorder(node->right);
 	}
 
 	void Postorder() { Postorder(root_); }
 	void Postorder(Node* node)
 	{
-		// TODO:
+		if(node == nullptr) {return;}
+		Postorder(node->left);
+		Postorder(node->right);
+		std::cout << node->item << " ";
 	}
 
 	void LevelOrder()
