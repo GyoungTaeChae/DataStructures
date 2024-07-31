@@ -144,8 +144,14 @@ public:
 		Node* current = root_;
 		while (current)
 		{
-			// Visit(current);
 			
+			Visit(current);
+			if(current->left) q.Enqueue(current->left);
+			if(current->right) q.Enqueue(current->right);
+			if(q.IsEmpty()) return;
+			current = q.Front();
+			q.Dequeue();
+
 		}
 	}
 
@@ -158,7 +164,13 @@ public:
 
 		while (!s.IsEmpty())
 		{
-			// TODO:
+			Node* current = s.Top();
+			s.Pop();
+
+			Visit(current);
+
+			if(current->right) s.Push(current->right);
+			if(current->left)  s.Push(current->left);
 		}
 	}
 
@@ -171,7 +183,17 @@ public:
 		Node* current = root_;
 		while (current || !s.IsEmpty())
 		{
-			// TODO:
+			while(current)
+			{
+				s.Push(current);
+				current = current->left;
+			}
+			
+			current = s.Top();
+			s.Pop();
+
+			Visit(current);
+			current = current->right;
 		}
 	}
 
@@ -184,12 +206,25 @@ public:
 
 		while (!s1.IsEmpty())
 		{
-			// TODO:
+			Node* node = s1.Top();
+			s1.Pop();
+
+			s2.Push(node);
+
+			if(node->left)
+				s1.Push(node->left);
+
+			if(node->right)
+				s1.Push(node->right);
+
 		}
 
 		while (!s2.IsEmpty())
 		{
-			// TODO:
+			Node* node = s2.Top();
+			s2.Pop();
+
+			Visit(node);
 		}
 	}
 
