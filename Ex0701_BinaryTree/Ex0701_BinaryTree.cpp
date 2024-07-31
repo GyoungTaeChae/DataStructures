@@ -62,9 +62,9 @@ int main()
 	tree.LevelOrder();
 	cout << endl;
 
-	// cout << "Iterative Preorder" << endl; // 6 2 1 3 5 4
-	// tree.IterPreorder();
-	// cout << endl;
+	cout << "Iterative Preorder" << endl; // 6 2 1 3 5 4
+	tree.IterPreorder();
+	cout << endl;
 
 	// cout << "Iterative Inorder" << endl; // 1 3 2 6 5 4
 	// tree.IterInorder();
