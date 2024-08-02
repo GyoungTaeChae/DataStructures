@@ -38,11 +38,21 @@ public:
 	void Infix() { Infix(root_); cout << endl; }
 	void Infix(Node* node) {
 		// TODO: 수식을 Infix 형식으로 출력 (괄호 포함)
+		if(node == nullptr) {return;}
+		if(!IsDigit(node->item)){std::cout << "(";}
+		Infix(node->left);
+		Visit(node);
+		Infix(node->right);
+		if(!IsDigit(node->item)){std::cout << ")";}
 	}
-
+	// 
 	void Postfix() { Postfix(root_);  cout << endl; }
 	void Postfix(Node* node) {
 		// TODO: 수식을 Postfix 형식으로 출력
+		if(node == nullptr) {return;}
+		Postfix(node->left);
+		Postfix(node->right);
+		Visit(node);
 	}
 
 	// Infix -> postfix -> expression tree
@@ -131,6 +141,7 @@ int main()
 	cout << "Postfix: ";
 	tree.Postfix(); // 532-4*+ <- 출력 예시
 
+	return 0; 
 	cout << endl;
 
 	// Infix -> Postfix -> Expression Tree
