@@ -64,7 +64,7 @@ public:
 		size_ += 1;
 		int current = size_; // 마지막에 추가가될 위치 (인덱스)
 
-		while (current != 1 && item > heap_[current/2]) // 부모 위치의 값이 추가하려는 값보다 작다면
+		while (current != 1 && heap_[current/2] <item  ) // 부모 위치의 값이 추가하려는 값보다 작다면
 		{
 			// 부모 위치의 값을 자식 위치로 복사해서 내린다.
 			// TODO:
