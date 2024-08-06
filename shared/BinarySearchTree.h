@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <cassert>
 #include <iostream>
+#include <cmath>
 
 template<typename K, typename V>
 class BinarySearchTree
@@ -85,16 +86,23 @@ public:
 	void Insert(const Item& item)
 	{
 		using namespace std;
-		cout << "Insert " << item.key << item.value << endl;
+		cout << "Insert " << item.key  << " " << item.value << endl;
 		root_ = Insert(root_, item);
 	}
 
 	Node* Insert(Node* node, const Item& item)
 	{
-		// 힌트: RecurGet()
+		if(!node) return new Node{item, nullptr, nullptr};
 
-		// TODO:
-
+		if(node->item.key > item.key)
+		{
+			node->left = Insert(node->left,item);
+		}
+		else if (node->item.key < item.key)
+		{
+			node->right =Insert(node->right,item);
+		}
+		else node->item = item;
 		return node;
 	}
 
@@ -128,7 +136,25 @@ public:
 			node->right = Remove(node->right, key);
 		else
 		{
-			// TODO:
+			
+			if(!node->left)
+			{
+				Node* temp = node->right;
+				delete node;
+				return temp;
+			}			
+			else if (!node->right)
+			{
+				Node* temp = node->left;
+				delete node;
+				return temp;
+			}
+
+			Node* temp = MinKeyLeft(node->right);
+			node->item = temp->item;
+			node->right = Remove(node->right, temp->item.key);
+
+
 		}
 
 		return node;
