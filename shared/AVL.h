@@ -7,9 +7,11 @@ class AVL : public BinarySearchTree<K, V>
 {
 public:
 	using Base = BinarySearchTree<K, V>;
-	using Item = BinarySearchTree<K, V>::Item;
-	using Node = BinarySearchTree<K, V>::Node;
+	// using Item = BinarySearchTree<K, V>::Item;
+	// using Node = BinarySearchTree<K, V>::Node;
+	using typename BinarySearchTree<K, V>::Item;
 
+    using typename BinarySearchTree<K, V>::Node;
 	//struct Item {
 	//	K key = K();	// first
 	//	V value = V();	// second
@@ -18,7 +20,7 @@ public:
 	//struct Node {
 	//	Item item;
 	//	Node* left = nullptr;
-	//	Node* right = nullptr;
+	//	Node* right = nullccptr;
 	//};
 
 	int Height(Node* node)
@@ -36,16 +38,19 @@ public:
 
 	Node* RotateLeft(Node* parent)
 	{
-		// TODO:
-
-		return nullptr;
+		
+		Node* child = parent->right;
+		parent->right = child->left;
+		child->left = parent;
+		return child;
 	}
 
 	Node* RotateRight(Node* parent)
 	{
-		// TODO:
-
-		return nullptr;
+		Node* child = parent->left;
+		parent->left = child->right;
+		child->right= parent;
+		return child;
 	}
 
 	void Insert(const Item& item)

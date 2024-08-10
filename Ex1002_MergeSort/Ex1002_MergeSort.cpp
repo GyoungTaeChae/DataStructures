@@ -32,17 +32,27 @@ void Merge(int init[], int merged[], int left, int mid, int right)
 	Print(init, left, mid);
 	cout << " Right : ";
 	Print(init, mid + 1, right);
+	/////////////////////////////////////////
+	 while (i <= mid && j <= right)
+    {
+        if (init[i] <= init[j])
+            merged[k++] = init[i++];
+        else
+            merged[k++] = init[j++];
+    }
 
-	// 인덱스를 2개 이용해서 정렬하면서 merge
-	// TODO:
-
-	// 남은 내용들 복사
-	// TODO:
+    // 남은 내용들 복사
+    if (i > mid)
+        for (l = j; l <= right; l++)
+            merged[k++] = init[l];
+        else
+            for (l = i; l <= mid; l++)
+                merged[k++] = init[l];
 
 	// merged -> init 복사
 	for (l = left; l <= right; l++)
 		init[l] = merged[l];
-
+	/////////////////////////////////////////
 	cout << "Merged : ";
 	Print(init, left, right);
 	cout << endl;

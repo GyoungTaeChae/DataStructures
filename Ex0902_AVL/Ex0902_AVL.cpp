@@ -16,8 +16,12 @@ int main()
 		bst.Insert(Item{ i, char('A' + i) });
 		bst.Print2D();
 	}
+	return 0;
 
 	bst.Inorder(); // key에 대해 정렬
+
+	return 0;
+
 
 	cout << bst.RecurGet(5)->value << endl;
 	cout << bst.RecurGet(3)->value << endl;
@@ -31,5 +35,4 @@ int main()
 		bst.Print2D();
 	}
 
-	return 0;
 }
