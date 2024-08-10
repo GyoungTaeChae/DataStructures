@@ -29,8 +29,16 @@ int main()
 			cout << x << " was not found" << endl;
 		else
 		{
-			// TODO: 
-		}
+            int k = 0;
+            while (k < kn - 1 && keys[k + 1] <= x)
+                k++;
+
+            int found = SequentialSearch(arr, indices[k], indices[k + 1], x);
+            if (found >= 0)
+                cout << x << " was found at " << found << endl;
+            else
+                cout << x << " was not found" << endl;
+        }
 	}
 
 	return 0;
