@@ -19,7 +19,7 @@ public:
 	{
 		max_vertices_ = max_vertices; // capacity
 
-		matrix_ = new int* [max_vertices_];
+		matrix_ = new int* [max_vertices_]; 
 		for (int r = 0; r < max_vertices_; r++) {
 			matrix_[r] = new int[max_vertices_];
 			for (int c = 0; c < max_vertices_; c++)
@@ -86,14 +86,20 @@ public:
 		cout << endl;
 	}
 
+
 	void DepthFirstTraversal(int v) // v는 인덱스
 	{
-		// TODO:
+    
+    visited_[v] = true;
+    cout << vertices_[v].item << " ";
+    for (int w = 0; w < n_; w++)
+        if (matrix_[v][w] && !visited_[w]) 
+			DepthFirstTraversal(w);
 	}
+
 
 	void IterDFT()
 	{
-		// TODO:
 	}
 
 	void BreadthFirstTraversal()
@@ -104,7 +110,27 @@ public:
 
 		ResetVisited();
 
-		// TODO:
+		visited_[v] = true;
+
+		q.Enqueue(v);
+
+		while (!q.IsEmpty())
+		{
+			v = q.Front();
+			q.Dequeue();
+
+			cout << vertices_[v].item << " ";
+			for (int w = 0; w<n_; w++)
+				if(matrix_[v][w] && !visited_[w])
+				{
+					visited_[w] = true;
+					q.Enqueue(w);
+				}
+			cout << "Queue :";
+			q.Print();
+			cout <<endl;			
+		}
+
 	}
 
 	void ResetVisited()
