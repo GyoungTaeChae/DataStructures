@@ -23,33 +23,49 @@ void Print(int* arr, int size)
 int main()
 {
 	// 오른쪽으로 하나씩 밀기 (삽입 정렬의 중간 단계)
+	// {
+	// 	int arr[] = { 1, 2, 4, 5, 3, 6 };
+	// 	int n = sizeof(arr) / sizeof(arr[0]);
+
+	// 	Print(arr, n);
+
+	// 	// i = 4인 경우에 대해서 구현
+	// 	int i = 4;
+	// 	int key = arr[i];
+	// 	int j = i; 
+
+
+	// 	for (; j>0 && arr[j-1]>key; j--)
+	// 	{
+	// 		arr[j] = arr[j-1];
+	// 		Print(arr, n);
+	// 	}
+
+	// 	arr[j] = key;
+	// 	Print(arr, n);
+	// 	cout << endl;
+	// 	return 0 ;
+	// }
+	
+	int arr[] = { 6, 5, 4, 3, 2, 1 }; 
+	int n = sizeof(arr) / sizeof(arr[0]);
+	Print(arr,n);
+
+	for (int j = 1; j<n; j++)
 	{
-		int arr[] = { 1, 2, 4, 5, 3, 6 };
-		int n = sizeof(arr) / sizeof(arr[0]);
+	int key = arr[j];
+	int i = j;
 
-		Print(arr, n);
 
-		// i = 4인 경우에 대해서 구현
-		int i = 4;
-		// for (...)
+	for (; i>0; i--)
+	{
+		if(arr[i-1]>=key)
 		{
-			// TODO:
+			arr[i] = arr[i-1];
 			Print(arr, n);
 		}
-
-		Print(arr, n);
-		cout << endl;
 	}
-
-	//int arr[] = { 8, 3, 2, 5, 1, 2 };
-	int arr[] = { 6, 5, 4, 3, 2, 1 }; // Worst
-	//int arr[] = { 1, 2, 3, 4, 5, 6 }; // Best
-	int n = sizeof(arr) / sizeof(arr[0]);
-
-	// Insertion Sort
-	{
-
+	arr[i] = key;
+	Print(arr, n);
 	}
-
-	// Stability
 }
