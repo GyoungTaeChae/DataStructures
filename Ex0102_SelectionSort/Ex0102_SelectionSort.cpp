@@ -40,38 +40,37 @@ void Print(Element* arr, int size)
 int main()
 {
 	// 3개 정렬
-	{
-		for (int k = 0; k < 3; k++)
-			for (int j = 0; j < 3; j++)
-				for (int i = 0; i < 3; i++) {
+	// {
+	// 	for (int k = 0; k < 3; k++)
+	// 		for (int j = 0; j < 3; j++)
+	// 			for (int i = 0; i < 3; i++) {
 
-					int arr[3] = { i, j, k };
-					int size = sizeof(arr) / sizeof(arr[0]);
+	// 				int arr[3] = { i, j, k };
+	// 				int size = sizeof(arr) / sizeof(arr[0]);
 
-					for (int e = 0; e < size; e++) {
-						std::cout << arr[e] << " " << flush;
-					}
+	// 				for (int e = 0; e < size; e++) {
+	// 					std::cout << arr[e] << " " << flush;
+	// 				}
 
-					std::cout << " -> " << flush;
+	// 				std::cout << " -> " << flush;
 
 					
-					for (int i = 0; i<size; i++){
-						for (int j = i; j<size; j++){
-							if (arr[i] > arr[j]) {std::swap(arr[i] , arr[j]);}
-						}
-					}
+	// 				for (int i = 0; i<size; i++){
+	// 					for (int j = i; j<size; j++){
+	// 						if (arr[i] > arr[j]) {std::swap(arr[i] , arr[j]);}
+	// 					}
+	// 				}
 
-					for (int e = 0; e < size; e++) {
-						std::cout << arr[e] << " " << flush;
-					}
+	// 				for (int e = 0; e < size; e++) {
+	// 					std::cout << arr[e] << " " << flush;
+	// 				}
 
-					std::cout << boolalpha;
-					std::cout << CheckSorted(arr, size); // 정렬 되었나 확인
-					std::cout << endl;
-				}
-	}
+	// 				std::cout << boolalpha;
+	// 				std::cout << CheckSorted(arr, size); // 정렬 되었나 확인
+	// 				std::cout << endl;
+	// 			}
+	// }
 
-	return 0; // <- 실습용 임시
 
 	// 5개라면? 더 많다면?
 	{
@@ -85,17 +84,23 @@ int main()
 	}
 
 	// 가장 작은 수 찾기
-	{
-		int arr[] = { 8, 3, 2, 5, 1, 1, 2, 5, 8, 9 }; // 임의의 숫자들, 변경 가능
-		int size = sizeof(arr) / sizeof(arr[0]);
+	// {
+	// 	int arr[] = { 8, 3, 2, 5, 1, 1, 2, 5, 8, 9 }; // 임의의 숫자들, 변경 가능
+	// 	int size = sizeof(arr) / sizeof(arr[0]);
 
-		assert(size > 0); // size가 1이상이라고 가정
+	// 	assert(size > 0); // size가 1이상이라고 가정
 
-		// TODO:
-
-		// std::cout << "Minimum number is " << min_number << endl;
-	}
-
+	// 	// TODO:
+	// 	int min_number = 100;
+	// 	for (int i = 0; i< size-1; i++)
+	// 	{
+	// 		if (arr[i]<=min_number)
+	// 		{
+	// 			min_number = arr[i];
+	// 		}
+	// 	}
+	// 	std::cout << "Minimum number is " << min_number << endl;
+	// }
 	// 가장 작은 수의 인덱스 찾기
 	{
 		int arr[] = { 8, 3, 2, 5, 1, 1, 2, 5, 8, 9 };
@@ -103,11 +108,31 @@ int main()
 
 		assert(size > 0); // size가 1이상이라고 가정
 
-		// TODO:
+		int min_number = 100;
+		
+		for (int i = 0; i< size-1; i++)
+		{
+			if (arr[i]<=min_number)
+			{
+				min_number = arr[i];
+			}
+		}
+		
+		int min_index = 0;
+		for (min_index; min_index< size-1; min_index++)
+		{
+			if (arr[min_index]==min_number)
+			{
+				break;
+			}
+		}
 
-		//std::std::cout << "The index of min is " << min_index << endl;
-		//std::cout << "Minimum number is " << arr[min_index] << endl;
+
+		std::cout << "The index of min is " << min_index << endl;
+		std::cout << "Minimum number is " << arr[min_index] << endl;
 	}
+
+	return 0;
 
 	// Selection Sort
 	// 힌트: swap()
